@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -45,10 +45,8 @@
     --sidebar-border: 240 4% 18%;
     --sidebar-ring: 38 92% 55%;
 
-    /* Custom tokens */
-    --gradient-accent: linear-gradient(135deg, hsl(38, 92%, 55%), hsl(28, 95%, 50%));
-    --glow-accent: 0 0 40px hsl(38 92% 55% / 0.15);
     --text-dim: 240 5% 40%;
+    --card-elevated: 240 5% 12%;
   }
 }
 
@@ -65,6 +63,21 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Syne', sans-serif;
   }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
+  }
 }
 
 @layer components {
@@ -74,7 +87,7 @@
   }
 
   .border-glow {
-    box-shadow: var(--glow-accent);
+    box-shadow: 0 0 40px hsl(38 92% 55% / 0.12), 0 0 80px hsl(38 92% 55% / 0.05);
   }
 
   .section-padding {
@@ -84,4 +97,49 @@
   .line-accent {
     @apply w-12 h-[2px] bg-primary;
   }
+
+  /* Film grain overlay */
+  .grain::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+
+  /* Marquee */
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 25s linear infinite;
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  /* Number counter mono font */
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Magnetic hover for service cards */
+  .card-3d {
+    transition: transform 0.4s cubic-bezier(0.03, 0.98, 0.52, 0.99);
+    transform-style: preserve-3d;
+  }
+
+  /* Smooth reveal clip */
+  .clip-reveal {
+    clip-path: inset(0 0 100% 0);
+  }
+  .clip-revealed {
+    clip-path: inset(0 0 0% 0);
+  }
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
