@@ -80,7 +80,7 @@ const Hero = () => {
         </div>
         <h1
           ref={headingRef}
-          className="font-display font-extrabold text-5xl md:text-7xl lg:text-[6.5rem] leading-[0.92] tracking-[-0.02em] mb-10"
+          className="font-display font-extrabold text-5xl md:text-7xl lg:text-[5.5rem] leading-[0.92] tracking-[-0.02em] mb-10"
           style={{ perspective: "1000px" }}
         >
           <span className="word inline-block">Ik</span>{" "}
