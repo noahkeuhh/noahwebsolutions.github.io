@@ -97,8 +97,8 @@ const Hero = () => {
           ref={subRef}
           className="font-body text-muted-foreground text-lg md:text-xl max-w-lg leading-relaxed"
         >
-          19-jarige developer met een passie voor clean code en strak design.
-          Van concept tot lancering — ik regel het.
+          19-jarige developer gespecialiseerd in websites, automations en lead systems.
+          Van concept tot complete business oplossing.
         </p>
       </div>
 

@@ -71,9 +71,9 @@ const About = () => {
                 Wat begon als een hobby is uitgegroeid tot mijn passie en werk.
               </p>
               <p>
-                Ik combineer technische kennis met een scherp oog voor design. Of het nu
-                gaat om een snelle landingspagina of een complexe webapp — ik lever
-                kwaliteit met aandacht voor detail en gebruikerservaring.
+                Ik combineer technische kennis met business inzicht. Of het nu
+                gaat om een strakke website, een slimme automatisering of een
+                compleet leadsysteem — ik help jouw bedrijf groeien.
               </p>
             </div>
           </div>

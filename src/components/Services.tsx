@@ -10,22 +10,29 @@ const services = [
     icon: Code,
     title: "Web Development",
     description:
-      "Custom websites en webapplicaties gebouwd met moderne technologieën. Snel, responsive en SEO-geoptimaliseerd.",
-    tags: ["React", "Next.js", "TypeScript"],
-  },
-  {
-    icon: Palette,
-    title: "UI/UX Design",
-    description:
-      "Strakke, gebruiksvriendelijke interfaces die jouw merk versterken. Van wireframe tot pixel-perfect design.",
-    tags: ["Figma", "Prototyping", "Design Systems"],
+      "Custom websites en webshops die converteren. Van razendsnelle landingspagina's tot complexe webapplicaties.",
+    tags: ["React", "Next.js", "Shopify"],
   },
   {
     icon: Rocket,
-    title: "Full-Stack Solutions",
+    title: "Automations",
     description:
-      "Complete oplossingen van frontend tot backend. Databases, APIs, authenticatie — alles uit één hand.",
-    tags: ["APIs", "Databases", "C#", "Python"],
+      "Bespaar tijd en geld door repetitieve taken te automatiseren. Koppel je favoriete tools en laat ze voor jou werken.",
+    tags: ["n8n", "Zapier", "AI Workflows"],
+  },
+  {
+    icon: Palette,
+    title: "Lead Systems",
+    description:
+      "Geautomatiseerde systemen die leads verzamelen, opvolgen en omzetten in klanten. Terwijl jij slaapt.",
+    tags: ["CRM", "Funnels", "Email Marketing"],
+  },
+  {
+    icon: Palette, // Using Palette again as placeholder, maybe change later or keep simple
+    title: "UI/UX & Branding",
+    description:
+      "Een sterk merk begint met een strak design. Gebruiksvriendelijke interfaces die vertrouwen uitstralen.",
+    tags: ["Figma", "Identiteit", "Prototyping"],
   },
 ];
 
@@ -61,7 +68,7 @@ const Services = () => {
         <h2 className="font-display font-bold text-4xl md:text-6xl mb-14 leading-[1.05]">
           Wat ik <span className="text-gradient">doe</span>
         </h2>
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-2 gap-5">
           {services.map((service, i) => (
             <div
               key={service.title}
